@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toko Sederhana</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .product { border: 1px solid #ddd; padding: 10px; margin-bottom: 15px; }
+    img { max-width: 200px; }
+    button { background: green; color: white; padding: 8px 12px; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h1>Produk Kami</h1>
+
+  <div class="product">
+    <h2>Kaos Polos</h2>
+    <img src="https://via.placeholder.com/200" alt="Kaos Polos"/>
+    <p>Harga: Rp50.000</p>
+    <button onclick="orderViaWA('Kaos Polos')">Beli via WhatsApp</button>
+  </div>
+
+  <div class="product">
+    <h2>Celana Jeans</h2>
+    <img src="https://via.placeholder.com/200" alt="Celana Jeans"/>
+    <p>Harga: Rp120.000</p>
+    <button onclick="orderViaWA('Celana Jeans')">Beli via WhatsApp</button>
+  </div>
+
+  <script>
+    function orderViaWA(productName) {
+      const phone = '6281234567890'; // Ganti dengan nomor WA kamu
+      const message = `Halo, saya mau beli ${productName}`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
